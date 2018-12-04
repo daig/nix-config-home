@@ -1,0 +1,94 @@
+snippet com
+	common ${1:x}
+	  default-language: Haskell2010
+	  default-extensions: AllowAmbiguousTypes, BangPatterns, BinaryLiterals, ConstraintKinds, DataKinds, DefaultSignatures, DeriveAnyClass, DeriveDataTypeable, DeriveGeneric, DeriveLift, DerivingStrategies, EmptyCase, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, GeneralizedNewtypeDeriving, InstanceSigs, LambdaCase, MultiWayIf, NamedFieldPuns, NamedWildCards, NegativeLiterals, NumDecimals, OverloadedLabels, OverloadedStrings, PartialTypeSignatures, PatternSynonyms, PolyKinds, RankNTypes, RecordWildCards, RecursiveDo, RoleAnnotations, ScopedTypeVariables, StandaloneDeriving, StrictData, TupleSections, TypeApplications, TypeFamilyDependencies, TypeOperators, ViewPatterns, ImpredicativeTypes, QuantifiedConstraints, NumericUnderscores, BlockArguments, DerivingVia
+
+snippet min
+	cabal-version: 2.2
+	name: ${1:foo}
+	version: 0.1.0.0
+	license: MIT
+
+	library
+	  build-depends: base
+	  default-language: Haskell2010
+	  default-extensions: AllowAmbiguousTypes, BangPatterns, BinaryLiterals, ConstraintKinds, DataKinds, DefaultSignatures, DeriveAnyClass, DeriveDataTypeable, DeriveGeneric, DeriveLift, DerivingStrategies, EmptyCase, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, GeneralizedNewtypeDeriving, InstanceSigs, LambdaCase, MultiWayIf, NamedFieldPuns, NamedWildCards, NegativeLiterals, NumDecimals, OverloadedLabels, OverloadedStrings, PartialTypeSignatures, PatternSynonyms, PolyKinds, RankNTypes, RecordWildCards, RecursiveDo, RoleAnnotations, ScopedTypeVariables, StandaloneDeriving, StrictData, TupleSections, TypeApplications, TypeFamilyDependencies, TypeOperators, ViewPatterns, ImpredicativeTypes, QuantifiedConstraints, NumericUnderscores, BlockArguments, DerivingVia
+
+snippet head
+	cabal-version: 2.2
+	name: ${1:foo}
+	homepage: https://github.com/${2:daig}/$1#readme
+	version: 0.1.0.0
+	category: ${3}
+	synopsis: ${4}
+	description: ${5}
+	stability: cursed
+	bug-reports: https://github.com/$2/$1/issues
+	author: Dai
+	maintainer: daig@sodality.cc
+	copyright: 2018 Sodality
+	license: MIT
+
+	extra-source-files:
+	  README.md
+	  CHANGELOG.md
+	
+	source-repository head
+	  type: git
+	  location: https://github.com/$2/$1
+
+snippet lib
+	library ${1:}
+	  import: ${2:x}
+	  hs-source-dirs: $1
+	  build-depends: base ^>= 4.12.0.0
+
+snippet test
+	test-suite ${1:test}
+	  import: ${2:x}
+	  type: exitcode-stdio-1.0
+	  main-is: $1.hs
+	  hs-source-dirs: test
+
+snippet exe
+	executable ${1:exe}
+	  import: ${2:x}
+	  type: exitcode-stdio-1.0
+	  main-is: $1.hs
+	  hs-source-dirs: exe
+
+snippet bench
+	benchmark ${1:bench}
+	  import: ${2:x}
+	  type: exitcode-stdio-1.0
+	  main-is: $1.hs
+	  hs-source-dirs: bench
+
+snippet lang
+	default-language: Haskell2010
+	default-extensions: ${1:LambdaCase}
+
+snippet exp
+	exposed-modules: ${1:Lib}
+
+snippet reexp
+	reexported-modules: ${1:Lib}
+
+snippet mix
+	mixins:
+		${1:pkg} (${2:Lib} as ${3:Q}.$2) requires (${4:Sig} as ${5:Q}.$4)
+
+snippet hide
+	${1} hiding (${2:Prelude})
+
+snippet nopre
+	NoImplicitPrelude
+
+snippet nostar
+	NoStarIsType
+snippet clang
+	ghc-options: "-pgmP clang" "-pgmc clang" "-pgma clang" "-pgml clang"
+	ld-options: -fuse-ld=lld
+snippet gold
+	ghc-options: -optl-fuse-ld=gold
+	ld-options: -fuse-ld=gold

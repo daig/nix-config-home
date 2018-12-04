@@ -1,0 +1,6 @@
+[user]
+	email = daig@noreply.github.com
+	name = Dai
+[core]
+	excludesfile = /home/dai/.gitignore
+	editor = vim

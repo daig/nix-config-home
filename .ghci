@@ -1,0 +1,13 @@
+:seti -XOverloadedStrings
+:seti -XTemplateHaskell
+:seti -XQuasiQuotes
+:seti -XLambdaCase
+:seti -XTypeApplications
+:seti -XMagicHash
+:seti -XUnboxedTuples
+:seti -XUnboxedSums
+:seti -XImplicitPrelude
+:seti -XPartialTypeSignatures
+:def core \_ -> return ":set -ddump-simpl -fobject-code -O2"
+:set -dsuppress-all
+:set -dsuppress-uniques
