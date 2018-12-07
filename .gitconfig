@@ -2,5 +2,5 @@
 	email = daig@noreply.github.com
 	name = Dai
 [core]
-	excludesfile = /home/dai/.gitignore
+	excludesfile = /home/dai/.gitignore-global
 	editor = vim
