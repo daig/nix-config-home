@@ -16,4 +16,5 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ShortcutsNoMnemonics=TRUE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
